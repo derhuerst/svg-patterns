@@ -2,5 +2,6 @@
 
 module.exports = {
 	lines: require('./lines'),
-	circles: require('./circles')
+	circles: require('./circles'),
+	paths: require('./paths')
 }
