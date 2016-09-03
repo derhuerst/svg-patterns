@@ -58,13 +58,13 @@ const caps = {
 }
 
 const hexagons = {
-	ratio: round(Math.tan(Math.PI/6) + Math.cos(Math.PI/6)),
+	ratio: round(Math.tan(Math.PI/6) + 1/Math.cos(Math.PI/6)),
 	path: (s) => {
 		const x = s * Math.tan(Math.PI/6) * .5
 		const e = s * .5 / Math.cos(Math.PI/6)
 		return M(0, s/2) + l(x, s/2) + l(e, 0) + l(x, -s/2)
 			+ l(-x, -s/2) + l(-e, 0) + l(-x, s/2) + 'Z'
-			+ M(x+e, s/2) + l(e, 0)
+			+ M(x+e+x, s/2) + l(e, 0)
 	}
 }
 
