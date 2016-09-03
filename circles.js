@@ -8,12 +8,12 @@ const {pattern} = require('./helpers')
 
 
 const defaults = {
-	size: 10,
+	size: 10, // size of the pattern
 	radius: 2,
-	fill: '#545454',
+	fill: '#545454', // any SVG-compatible color
 	strokeWidth: 0,
-	stroke: '#343434',
-	background: null,
+	stroke: '#343434', // any SVG-compatible color
+	background: null, // any SVG-compatible color
 	complement: false
 }
 
@@ -25,7 +25,7 @@ const circles = (opt = {}) => {
 		h('circle', {
 			cx: s/2, cy: s/2, r: opt.radius,
 			fill: opt.fill,
-			stroke: opt.stroke, 'stroke-width': opt.strokeWidth
+			stroke: opt.stroke, 'stroke-width': opt.strokeWidth + ''
 		})
 	]
 

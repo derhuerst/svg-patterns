@@ -22,10 +22,10 @@ const tile = (o, s) => {
 
 
 const defaults = {
-	size: 10,
+	size: 10, // size of the pattern
 	strokeWidth: 2,
-	stroke: '#343434',
-	background: null,
+	stroke: '#343434', // any SVG-compatible color
+	background: null, // any SVG-compatible color
 	orientations: [45]
 }
 

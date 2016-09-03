@@ -73,11 +73,11 @@ const styles = {squares, nylon, waves, woven, crosses, caps, hexagons}
 
 
 const defaults = {
-	size: 10,
-	fill: '#545454',
+	size: 10, // size of the pattern
+	fill: '#545454', // any SVG-compatible color
 	strokeWidth: 0,
-	stroke: '#343434',
-	background: null
+	stroke: '#343434', // any SVG-compatible color
+	background: null // any SVG-compatible color
 }
 
 const paths = (style, opt = {}) => {
