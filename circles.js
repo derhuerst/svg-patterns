@@ -34,7 +34,7 @@ const circles = (opt = {}) => {
 			h('circle', {
 				cx: x, cy: y, r: opt.radius,
 				fill: opt.fill,
-				stroke: opt.stroke, 'stroke-width': opt.strokeWidth
+				stroke: opt.stroke, 'stroke-width': opt.strokeWidth + ''
 			}))
 
 	return pattern(opt.id || shortid(6), opt.size, children, opt.background)

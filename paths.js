@@ -45,7 +45,7 @@ const paths = (style, opt = {}) => {
 	const children = [h('path', {
 		d: styles[style](opt.size),
 		fill: opt.fill,
-		stroke: opt.stroke, 'stroke-width': opt.strokeWidth,
+		stroke: opt.stroke, 'stroke-width': opt.strokeWidth + '',
 		'stroke-linecap': 'square'
 	})]
 

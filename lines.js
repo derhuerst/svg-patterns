@@ -47,7 +47,7 @@ const lines = (opt = {}) => {
 	for (let orientation of opt.orientations)
 		children.push(h('path', {
 			d: tile(orientation, opt.size),
-			stroke: opt.stroke, 'stroke-width': opt.strokeWidth,
+			stroke: opt.stroke, 'stroke-width': opt.strokeWidth + '',
 			'stroke-linecap': 'square'
 		}))
 
