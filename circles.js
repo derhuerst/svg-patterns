@@ -3,7 +3,7 @@
 const shortid = require('shortid').generate
 const h = require('virtual-dom/h')
 
-const pattern = require('./pattern')
+const {pattern} = require('./helpers')
 
 
 

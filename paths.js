@@ -3,86 +3,69 @@
 const shortid = require('shortid').generate
 const h = require('virtual-dom/h')
 
-const pattern = require('./pattern')
+const {M, l, c, round, pattern} = require('./helpers')
 
 
-
-const round = (x) => Math.round(x * 1000) / 1000
-
-const path = (parts, close) => parts
-	.map((p) => 'number' === typeof p ? Math.round(p * 1000) / 1000 : p)
-	.join(' ')
-	+ (close ? 'z' : '')
 
 // credit to @riccardoscalco!
 // taken from https://github.com/riccardoscalco/textures/blob/ca09566cb9e2dd0bf572639a7e17a9a96717c5e1/textures.coffee#L278-L306
 
 const squares = {
 	ratio: 1,
-	path: (s) => path([
-		'M',s/4,s/4,
-		'l',s/2,0, 'l',0,s/2, 'l',-s/2,0
-	], true)
+	path: (s) =>
+		M(s/4, s/4) + l(s/2, 0) + l(0, s/2) + l(-s/2, 0) + 'z'
 }
 
 const nylon = {
 	ratio: 1,
-	path: (s) => path([
-		'M',0,s/4, 'l',s/4,0, 'l',0,-s/4,
-		'M',s*3/4,s, 'l',0,-s/4, 'l',s/4,0,
-		'M',s/4,s/2, 'l',0,s/4, 'l',s/4,0,
-		'M',s/2,s/4, 'l',s/4,0, 'l',0,s/4
-	])
+	path: (s) =>
+		  M(0, s/4)   + l(s/4, 0)  + l(0, -s/4)
+		+ M(s*3/4, s) + l(0, -s/4) + l(s/4, 0)
+		+ M(s/4, s/2) + l(0, s/4)  + l(s/4, 0)
+		+ M(s/2, s/4) + l(s/4, 0)  + l(0, s/4)
 }
 
 // slightly adapted
 const waves = {
 	ratio: 1,
-	path: (s) => path([
-		'M',0,s/2,
-		'c',s/8,-s/4,s*3/8,-s/4,s/2,0,
-		'c',s/8,s/4,s*3/8,s/4,s/2,0
-	])
+	path: (s) =>
+		  M(0, s/2)
+		+ c(s/8, -s/4, s*3/8, -s/4, s/2, 0)
+		+ c(s/8, s/4, s*3/8, s/4, s/2, 0)
 }
 
 const woven = {
 	ratio: 1,
-	path: (s) => path([
-		'M',s/4,s/4, 'l',s/2,s/2,
-		'M',s*3/4,s/4, 'l',s/2,-s/2,
-		'M',s/4,s*3/4, 'l',-s/2,s/2,
-		'M',s*3/4,s*5/4, 'l',s/2,-s/2,
-		'M',-s/4,s/4, 'l',s/2,-s/2
-	])
+	path: (s) =>
+		  M(s/4, s/4)     + l(s/2, s/2)
+		+ M(s*3/4, s/4)   + l(s/2, -s/2)
+		+ M(s/4, s*3/4)   + l(-s/2, s/2)
+		+ M(s*3/4, s*5/4) + l(s/2, -s/2)
+		+ M(-s/4, s/4)    + l(s/2, -s/2)
 }
 
 const crosses = {
 	ratio: 1,
-	path: (s) => path([
-		'M',s/4,s/4, 'l',s/2,s/2,
-		'M',s/4,s*3/4, 'l',s/2,-s/2
-	])
+	path: (s) =>
+		  M(s/4, s/4)   + l(s/2, s/2)
+		+ M(s/4, s*3/4) + l(s/2, -s/2)
 }
 
 const caps = {
 	ratio: 1,
-	path: (s) => path([
-		'M',s/4,s*3/4, 'l',s/4,-s/2, 'l',s/4,s/2
-	])
+	path: (s) =>
+		M(s/4, s*3/4) + l(s/4, -s/2) + l(s/4, s/2)
 }
 
-// this assumes a tile of 1 by 1
-const x = Math.tan(Math.PI/6) * .5
-const l = .5 / Math.cos(Math.PI/6)
 const hexagons = {
-	ratio: round(x + l + x + l),
-	path: (s) => path([
-		'M',0,s/2,
-		'l',x*s,s/2, 'l',l*s,0, 'l',x*s,-s/2,
-		'l',-x*s,-s/2, 'l',-l*s,0, 'l',-x*s,s/2,
-		'Z',
-		'M',2*x*s+l*s,s/2, 'l',l*s,0
-	])
+	ratio: round(Math.tan(Math.PI/6) + Math.cos(Math.PI/6)),
+	path: (s) => {
+		const x = s * Math.tan(Math.PI/6) * .5
+		const e = s * .5 / Math.cos(Math.PI/6)
+		return M(0, s/2) + l(x, s/2) + l(e, 0) + l(x, -s/2)
+			+ l(-x, -s/2) + l(-e, 0) + l(-x, s/2) + 'Z'
+			+ M(x+e, s/2) + l(e, 0)
+	}
 }
 
 const styles = {squares, nylon, waves, woven, crosses, caps, hexagons}
