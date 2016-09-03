@@ -37,7 +37,11 @@ const circles = (opt = {}) => {
 				stroke: opt.stroke, 'stroke-width': opt.strokeWidth + ''
 			}))
 
-	return pattern(opt.id || shortid(6), opt.size, children, opt.background)
+	return pattern(
+		opt.id || shortid(6),
+		opt.size, opt.size,
+		children, opt.background
+	)
 }
 
 module.exports = circles

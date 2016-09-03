@@ -2,15 +2,15 @@
 
 const h = require('virtual-dom/h')
 
-const pattern = (id, size, children, background) => {
+const pattern = (id, width, height, children, background) => {
 
 	if (background) children = [
-		h('rect', {width: size, height: size, fill: background})
+		h('rect', {width, height, fill: background})
 	].concat(children)
 
 	const pattern = h('pattern', {
 		id, patternUnits: 'userSpaceOnUse',
-		width: size, height: size
+		width, height
 	}, children)
 	pattern.url = () => `url(#${id})`
 

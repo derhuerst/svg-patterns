@@ -51,7 +51,11 @@ const lines = (opt = {}) => {
 			'stroke-linecap': 'square'
 		}))
 
-	return pattern(opt.id || shortid(6), opt.size, children, opt.background)
+	return pattern(
+		opt.id || shortid(6),
+		opt.size, opt.size,
+		children, opt.background
+	)
 }
 
 module.exports = lines
