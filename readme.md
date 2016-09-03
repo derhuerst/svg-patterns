@@ -2,6 +2,8 @@
 
 **Create SVG patterns programmatically to visualize data.**
 
+`svg-patterns` exposes `lines([opt])`, `circles([opt])` and `paths(style, [opt])`.
+
 ![a simple pattern](https://cdn.rawgit.com/derhuerst/svg-patterns/master/examples/kitchen-sink.svg)
 
 This library is inspired by [Textures.js](http://riccardoscalco.github.io/textures/) but tries to do a few things differently:
@@ -24,8 +26,6 @@ npm install svg-patterns
 
 
 ## Usage
-
-`svg-patterns` exposes `lines([opt])`, `circles([opt])` and `paths(style, [opt])`.
 
 ### Getting Started
 

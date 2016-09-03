@@ -9,69 +9,75 @@ const h = require('virtual-dom/h')
 const lines1 = patterns.lines({
 	size: 10,
 	strokeWidth: 1,
-	stroke: 'darkorange',
-	background: '#343434',
-	orientations: [0, 45]
+	orientations: [0, 45],
+	stroke: '#fdf5e6',
+	background: '#343434'
 })
 
 const circles = patterns.circles({
 	size: 15,
-	radius: 2,
-	strokeWidth: 1,
-	complement: true
+	radius: 3,
+	complement: true,
+	fill: '#c0392b',
+	background: '#fdf5e6'
 })
 
 const squares = patterns.paths('squares', {
-	background: '#c0392b',
 	fill: 'none',
-	stroke: '#fff',
-	strokeWidth: 1
+	strokeWidth: .9,
+	stroke: '#fdf5e6',
+	background: '#2980b9'
 })
 
 const nylon = patterns.paths('nylon', {
 	size: 15,
+	strokeWidth: 1,
+	stroke: '#343434',
 	fill: 'none',
-	strokeWidth: 1
+	background: '#c0392b'
 })
 
 const waves = patterns.paths('waves', {
-	background: '#2980b9',
+	strokeWidth: 1,
 	fill: 'none',
-	stroke: '#fff',
-	strokeWidth: 1
+	stroke: '#fdf5e6',
+	background: '#343434'
 })
 
 const woven = patterns.paths('woven', {
-	background: '#2980b9',
-	stroke: '#fff',
-	strokeWidth: 1
+	strokeWidth: 1.2,
+	stroke: '#c0392b',
+	background: '#fdf5e6'
 })
 
 const crosses = patterns.paths('crosses', {
-	background: '#343434',
-	size: 8,
-	stroke: 'darkorange',
-	strokeWidth: .6
+	size: 10,
+	strokeWidth: .8,
+	stroke: '#fdf5e6',
+	background: '#2980b9'
 })
 
 const caps = patterns.paths('caps', {
+	size: 9,
+	strokeWidth: 1,
+	stroke: '#343434',
 	fill: 'none',
-	size: 7,
-	strokeWidth: .7
+	background: '#c0392b'
 })
 
 const hexagons = patterns.paths('hexagons', {
-	background: '#343434',
-	stroke: 'darkorange',
+	strokeWidth: 1,
 	fill: 'none',
-	strokeWidth: 1
+	stroke: '#fdf5e6',
+	background: '#343434'
 })
 
-const lines2 = patterns.lines({
-	size: 4,
-	strokeWidth: .5,
-	stroke: '#000',
-	orientations: [90]
+const rhombic = patterns.paths('rhombic3d', {
+	size: 14,
+	strokeWidth: 1,
+	fill: 'none',
+	stroke: '#c0392b',
+	background: '#fdf5e6'
 })
 
 
@@ -89,7 +95,7 @@ process.stdout.write(stringify(
 	}, [
 		h('defs', [
 			lines1, circles, squares, nylon, waves,
-			woven, crosses, caps, hexagons, lines2
+			woven, crosses, caps, hexagons, rhombic
 		]),
 		rect(0, 0, lines1),
 		rect(1, 0, circles),
@@ -100,6 +106,6 @@ process.stdout.write(stringify(
 		rect(1, 1, crosses),
 		rect(2, 1, caps),
 		rect(3, 1, hexagons),
-		rect(4, 1, lines2)
+		rect(4, 1, rhombic)
 	])
 ))
