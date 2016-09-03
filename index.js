@@ -1,3 +1,5 @@
 'use strict'
 
-// todo
+module.exports = {
+	lines: require('./lines')
+}

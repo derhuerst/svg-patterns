@@ -3,12 +3,16 @@
 	"description":  "SVG patterns for Data Visualization.",
 	"version":      "0.1.0",
 	"main":         "index.js",
-	"files":        ["index.js"],
+	"files":        ["index.js", "pattern.js", "lines.js"],
 	"keywords":     ["svg", "dataviz", "pattern", "generate"],
 	"author":       "Jannis R <mail@jannisr.de>",
 	"homepage":     "https://github.com/derhuerst/svg-patterns",
 	"repository":   "derhuerst/svg-patterns",
 	"issues":       "https://github.com/derhuerst/svg-patterns/issues",
 	"license":      "ISC",
-	"engines":      {"node": ">=6"}
+	"engines":      {"node": ">=6"},
+	"dependencies": {
+		"shortid": "^2.2.6",
+		"virtual-dom": "^2.1.1"
+	}
 }
