@@ -1,5 +1,6 @@
 'use strict'
 
 module.exports = {
-	lines: require('./lines')
+	lines: require('./lines'),
+	circles: require('./circles')
 }
