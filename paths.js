@@ -68,7 +68,40 @@ const hexagons = {
 	}
 }
 
-const styles = {squares, nylon, waves, woven, crosses, caps, hexagons}
+const rhombic = {
+	ratio: 1,
+	path: (s) =>
+		  M(0, 0) + l(s/2, s) + l(s/2, -s)
+		+ M(0, s) + l(s/2, -s) + l(s/2, s)
+}
+
+const rhombic3d = {
+	ratio: 1.5,
+	path: (s) => {
+		const w = s * 1.5 / 4
+		const h = s / 4
+		return ''
+		// 1. vertical
+		+ M(1*w, 0*h) + l(0, 1*h)
+		+ M(3*w, 0*h) + l(0, 1*h)
+		// 2. vertical
+		+ M(0*w, 1*h) + l(0, 2*h)
+		+ M(2*w, 1*h) + l(0, 2*h)
+		+ M(4*w, 1*h) + l(0, 2*h)
+		// 3. vertical
+		+ M(1*w, 3*h) + l(0, 1*h)
+		+ M(3*w, 3*h) + l(0, 1*h)
+		// 1. zig-zag
+		+ M(0*w, 1*h) + l(1*w, -1*h) + l(1*w,  1*h) + l(1*w, -1*h) + l(1*w,  1*h)
+		// 2. zig-zag
+		+ M(0*w, 2*h) + l(1*w, -1*h) + l(1*w,  1*h) + l(1*w, -1*h) + l(1*w,  1*h)
+		+ M(0*w, 2*h) + l(1*w,  1*h) + l(1*w, -1*h) + l(1*w,  1*h) + l(1*w, -1*h)
+		// 3. zig-zag
+		+ M(0*w, 3*h) + l(1*w,  1*h) + l(1*w, -1*h) + l(1*w,  1*h) + l(1*w, -1*h)
+	}
+}
+
+const styles = {squares, nylon, waves, woven, crosses, caps, hexagons, rhombic, rhombic3d}
 
 
 
