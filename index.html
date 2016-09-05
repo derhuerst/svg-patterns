@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+	<meta charset="utf-8"/>
+	<title>svg-patterns</title>
+	<meta name="description" content="SVG patterns for Data Visualization."/>
+	<meta name="keywords" content="svg, dataviz, pattern, generate"/>
+	<meta name="author" content="Jannis R <mail@jannisr.de>"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1"/>
+	<style>
+		body {
+			margin: 0; padding: 0;
+			background-color: #fdf5e6;
+			font-family: sans-serif;
+			font-weight: 300;
+			/*todo: system sans-serif font*/
+			font-size: 105%;
+		}
+
+		h1, h2, p {
+			margin: 1rem 0;
+		}
+
+		a {
+			text-decoration: none;
+			color: #c0392b;
+		}
+		a:hover {
+			text-decoration: underline;
+		}
+
+		code, pre {
+			padding: .15em .25em;
+			background-color: #ccc;
+			border: 1px solid #bbb;
+			border-radius: .15em;
+		}
+		pre {
+			padding: .5em;
+			text-align: left;
+			line-height: 1.25;
+			overflow-x: scroll;
+		}
+		pre code {
+			padding: 0;
+			background-color: none;
+			border: none;
+			border-radius: 0;
+		}
+
+		select {
+			display: block;
+			width: 100%;
+			box-sizing: border-box;
+		}
+
+		textarea {
+			width: 100%;
+			box-sizing: border-box;
+			background-color: #fff;
+			border: 1px solid #ccc;
+			border-radius: .15em;
+		}
+
+		.grid {
+			display: flex;
+		}
+		.grid > .cell {
+			flex-basis: 50%;
+			padding: 1rem .5rem;
+		}
+		.grid > .cell.alpha {
+			padding-left: 0;
+		}
+		.grid > .cell.omega {
+			padding-right: 0;
+		}
+
+		.section {
+			margin: 0 auto;
+			padding: 2rem 1rem;
+			max-width: 40rem;
+			text-align: center;
+		}
+
+		#intro {
+			padding-top: 4rem;
+			padding-bottom: 4rem;
+		}
+		#intro-name {
+			font-size: 300%;
+		}
+		#intro-name code {
+			padding: 0;
+			background-color: inherit;
+			border: inherit;
+		}
+
+		#demo {
+			max-width: inherit;
+			background-color: #c0392b;
+		}
+		#demo .cell.alpha {
+			text-align: right;
+		}
+		#demo .cell.omega {
+			display: flex;
+			flex-direction: column;
+			text-align: left;
+		}
+
+		#demo-target {
+			width: 30rem;
+			max-width: 100%;
+		}
+		#demo-target path {
+			stroke: black;
+			stroke-width: .1rem;
+		}
+		#demo-type {
+			max-width: 20rem;
+		}
+		#demo-options {
+			max-width: 20rem;
+		}
+	</style>
+</head><body>
+	<div id="intro" class="section">
+		<h1 id="intro-name"><a href="https://github.com/derhuerst/svg-patterns"><code>svg-patterns</code></a></h1>
+		<p id="intro-description"><strong>Create SVG patterns programmatically to visualize data.</strong></p>
+	</div>
+	<div id="demo" class="section">
+		<div class="grid">
+			<div class="cell alpha">
+				<svg id="demo-target" version="1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+					<defs/>
+					<path d="M483 5l-12 4-10-3c-5-2-8-2-16-2-12-1-15 0-22 6-7 7-10 8-18 8-6 0-8-1-14-3-9-5-11-5-11 3l-3 9c-3 4-3 6 1 8 4 3 4 6-1 6-6 1-9 1-11-2-4-3-7-3-11 2-5 5-5 6-2 11 3 4 4 6 2 7-2 2-2 5 0 8s2 6-2 7c-2 1-3 1-7-3l-7-8c-2-4-5-5-13-1l-11 3c-4-1-6-5-7-12 0-8-3-12-6-12-2 0-3 1-4 8-1 10-5 16-11 22-12 11-11 10-12 20l-1 10c-3 3-9-1-15-11-2-4-2-5-1-8v-4s-2-2-5-2c-7-2-10-5-10-7 0-3-2-7-5-9-2-2-2-5 0-14v-3h-4c-3 1-6 2-9 5l-8 6-5 3 2 4c3 4 2 7-6 14l-11 9-4 4-7-3-8-4-5 2-16 2h-16c-3-2-3-2-11 1s-8 3-8 6 1 4 4 7c4 5 6 8 6 14 0 5 0 6 4 8 6 4 10 8 10 10l-3 4-2 8c0 4 0 4-3 3l-10 3-15 3-8 2c-1 2-1 6 2 13 2 7 3 8 12 13 5 3 8 7 8 12 0 3-1 4-5 8l-7 8c-2 3-2 4-1 7s1 4-1 8c-2 5-2 5 0 10 2 6 10 14 18 18 6 3 7 3 17 3 17 0 20 2 15 11l-2 7c0 2-1 4-3 5-6 3-8 5-8 8 0 7 3 8 19 3 18-5 18-5 24-14 7-10 10-14 15-15 4-2 5-3 7-8s4-6 7-8c15-8 33-7 42 3 3 2 4 4 4 5-1 1 0 2 1 3s1 1 3-1l2-3 4 4 5 5 4 2 13 10 11 8c1 1 2 1 3-1s1-1 3 1l5 2c2 0 9 7 9 9l2 5c3 4 4 6 5 26 2 14 2 15 6 25l7 14c2 5 2 7 0 20-3 13-3 13 0 11 4-3 6-2 11 1 3 1 4 3 4 5l-1 3-1 4-1 5c-2 1 2 4 5 4 6 0 17 8 19 15 1 2 2 5 4 6 1 2 2 4 1 5-1 3-3 6-5 6-3 0-3 1 0 4l2 3 2-3c1-2 2-2 5-2 15 3 28 14 38 35 2 4 3 5 6 5l5 3 9 10c8 8 9 9 11 15 1 5 2 6 6 8 6 3 15 14 20 22 2 5 3 6 6 6l5 2 8 4c4 2 6 3 8 7l3 6c0 3 4 3 8-1 2-1 5-3 8-3 4-1 4-1 10 4l7 4 5-2c3-1 4-2 7-1h5c3-1 20 38 20 47 0 5 2 5 2 1 1-3 2-4 4-1h5c4-2 5-2 9 4l6 5c5 1 4 4-2 11l-4 5 10-3 18-4 8-1 3 6c10 16 11 21 7 29l-3 6 4 1c2 0 4 1 5 3 2 2 3 3 4 2 1-2 10 5 12 10l4 4h1l2 3c3 1 3 1 8-3 6-5 6-5 10-4 5 3 9 6 12 10s3 5 3 11c0 8 2 14 7 25 3 5 5 8 7 8 5 3 8 14 8 29v10l6 12c6 12 6 13 5 16s-2 6-4 7c-3 3-3 3-7 1-6-2-9-1-14 4-4 4-5 7-3 7 1-1 6 7 6 9l-12 22-7 6c-3 2-4 2-3 4s1 4-1 10l-1 7 3 3c4 5 8 7 11 6h8c5 0 6 0 8-2 4-3 8-10 8-12l5-9c9-12 12-15 19-17l8-5c3-4 3-24 0-28v-7c4-6 12-12 21-16 11-4 10-3 17-1l5 2 2-5 2-4-3-6c-2-5-2-5-1-10v-16c1-7 1-7-2-8l-4-4c-1-2-4-5-9-7l-9-7c-2-2-3-2-9-3-8 0-8 0-10-3-7-9-7-13-2-20 4-6 6-13 6-19 0-4 0-6 2-7l4-7 4-8 4-7c3-8 9-15 18-17 7-2 14 3 13 8a2248 2248 0 0 0 21 13c3 3 5 3 14 2h11l3 3 7 10c3 7 3 7 2 10-1 4-1 4 1 8 4 7 23 21 27 20l1-9c0-10 1-12 5-17s4-7-3-20c-4-8-6-11-16-21a258 258 0 0 1-16-16c0 2-3 1-4-2-1-2-2-3-4-3l-10-5-8-5c-9-4-22-14-26-19l-9-7c-7-4-26-12-29-12l-8-4-11-5c-7-2-15-6-17-8l-3-2-8-5-11-9c-6-4-7-6-6-9 0-1 4-5 10-9 13-10 15-13 9-20l-4-4-9 2c-9 2-10 2-15 0h-16c-9 2-10 2-13 0l-10-2c-6 0-6-1-12-6l-13-8c-7-2-11-5-11-8 0-1-1-3-4-4s-8-5-14-12l-15-14c-7-4-10-8-14-18-6-13-10-24-10-33-1-10-3-16-10-31-5-11-6-15-7-20v-7l-13-8c-10-7-16-13-30-26a845 845 0 0 0-37-34c-2-4-8-26-8-31v-18c0-7 2-10 7-10 3 0 4-1 4-2 0-3 2-6 5-6 2 1 2 0 3-5 1-6 1-6-1-8s-2-2-5-1c-3 2-4 1-4-2 0-7-1-17-2-14v2l-4-3c-4-3-6-7-6-10 1-2 2-2 7 0l1-3c0-7 5-16 12-20 2-2 3-2 5-1h2l4-1c3 0 3 0 3 3 0 2-1 3-3 3-2 1-1 1 1 1l11-4 12-4c10 0 11 0 13-3 1-2 1-2-1-2-3 0-4-1-1-5 1-3 3-4 4-3l3-1c1-2 2-2 10 1 8 2 10 4 7 7h1l4-4c2-4 4-4 9 1 6 4 8 7 8 10 0 2 1 2 3 2s3-1 3-3c0-4-1-5-9-12l-7-8 2-4c3-5 3-8-1-9-4-2-7-3-8-5 0 0 2-4 6-7l5-6-10-3-11-4-1-7 1-5 7-5c9-4 21-12 21-13l-19-3a325 325 0 0 1-41-10c-15-3-25-8-28-12s-4-10-3-15c1-4 1-4-1-7-2-1-3-5-3-7-1-5-3-5-14 1zm11 298h3c2-1 2-1 2 1 1 2 1 5-1 8-1 2-1 2-6 0-4-1-5-4-2-8 1-2 2-3 4-1z" style="fill: url(#demo-pattern)"/>
+					<path d="M341 402l-4 2-5 2c-1 1-4 2-4 0l-3-1c-3 0-4 0-4 3-1 2 0 2 3 3h14c1 1 2 0 4-2 2-4 3-9 1-9l-2 2zM232 547l2 2c3 5 0 9-7 9-4 1-10 5-17 13-4 4-5 4-9 4s-7 1-12 4l-10 4-16-8c-1-2-2-3-1-4l-1-2c-2 0-2 0-1 3 1 2 1 3-3 10-3 7-3 9 0 9 4 0 4 3 0 6l-3 5v2l1-2c0-3 3-1 3 2v3l3-2c3-3 5-3 4 1 0 3 0 5 2 7 2 4 2 5 2 11v7l3 3v7c-2 3-2 5-1 8 2 6 1 7-3 9-3 1-4 2-3 3v5l1 5c2 0 3-2 3-4 1-3 4-5 5-3v17c-2 3-2 4 0 4v5c1 0 1 4-1 5l-3-2c-3-2-3-1-4 5l-2 9-4 10c-2 6-2 6 0 9 3 3 2 4-1 8l-3 3 1 4 4 4 2 4 3 4c3 1 3 2 2 5 0 3 0 4 2 5v9c2 1 2 1 3-1 1-1 2-3 4-3 2-1 3-1 5 1l3 2c1-1 2-1 2 1 2 1 2 1 6-1 5-4 10-9 10-11v-15c1-4 1-5-1-6-1-2-2-4 0-4 1 0 6 3 8 6 1 3 2 3 5 2 5-1 9 1 14 6 3 3 5 4 7 4 1-1 2 0 3 1l2 3c1 0 4-7 4-10l2-4c3-2 4-5 2-5l-2-1c-1-1 0-2 2-6 3-4 4-6 4-9v-5c1-1 3-13 2-14l1-2 4-16 2-5v-8c3-4 2-5-1-11l-3-11c0-5 0-6 6-11l8-11c3-5 3-5 1-7s-2-4-2-9l-1-8-3-5c-1-5-1-5 1-7l2-2-2-2c-2 0-3-2-3-3 1-3 0-3-2-2l-6-2 5-4 4-3-3-2c-2-1-3-1-4 1-3 2-4-2-1-6 2-3 2-4 1-6-1-1-1-1-3 1l-3 2-1-2-2-5-4-3c-4-1-5-2-6-4s-2-2-3-2l-2-1h-3zm463 317l-6 4c-7 5-8 5-14 1l-4-3v3c1 3 0 4-4 7l-6 4-7-4c-5-3-5-3-8-2l-8 1-8 4c-5 4-11 6-23 7h-21c-8-2-15-1-21 2-4 3-6 3-10 2-5 0-10-4-12-10l-2-4h-7l-7-1c-1-8-1-9-4-9l-4 1c-3 2-6 2-8 0-2-1-2-1-4 1l-2 5c0 2 0 3-5 5l-8 3c-2 0-8-4-9-7l-1-5-1-3-4 4-8 7c-6 3-10 10-9 14l-1 8-2 6 2 6c1 3 2 4 4 5 3 1 4 3 5 5 2 5 5 6 10 5l10-1c5 0 5 0 8 4s4 5 8 6c6 1 11 4 11 5l14 15 6 2c3 0 5 1 9 6 6 7 9 9 13 9l6 4c3 3 3 3 6 2h11c2-1 3-1 9 2 9 4 13 7 13 11l4 6 6 9c2 4 2 5 7 7 9 3 14 4 26 5l12 1v2c0 3 0 3 3 2 2-1 2-2 1-6v-8c0-6 9-19 14-19 2 0 2 0 0-2v-2c2-1 1-2-1-5l-3-5-1-1-3-3c-1-1 0-2 3-3 3-2 3-2 2-4l-6-3c-4-3-5-3-6-8-2-9-1-13 2-17s5-9 7-15l5-10 9-15 10-15 5-7 3-5 2-4c-1-1-7-3-8-2z" style="fill: url(#demo-pattern)"/>
+				</svg>
+			</div>
+			<div class="cell omega">
+				<select id="demo-type">
+					<option value="lines">lines</option>
+					<option value="circles">circles</option>
+					<option value="paths,caps">paths – caps</option>
+					<option value="paths,squares">paths – squares</option>
+					<option value="paths,nylon">paths – nylon</option>
+					<option value="paths,waves">paths – waves</option>
+					<option value="paths,woven">paths – woven</option>
+					<option value="paths,crosses">paths – crosses</option>
+					<option value="paths,caps">paths – caps</option>
+					<option value="paths,hexagons">paths – hexagons</option>
+					<option value="paths,rhombic">paths – rhombic</option>
+					<option value="paths,rhombic3d">paths – rhombic3d</option>
+				</select>
+				<textarea id="demo-options">{
+	"background": "#fdf5e6"
+}</textarea>
+			</div>
+		</div>
+	</div>
+	<div id="howto" class="section">
+		<p><code>npm install svg-patterns</code></p>
+		<pre><code>const patterns = require('svg-patterns')
+const stringify = require('virtual-dom-stringify')
+
+const pattern = patterns.lines({
+	stroke: 'darkorange',
+	background: '#343434'
+})
+
+process.stdout.write(`
+	&lt;svg xmlns="http://www.w3.org/2000/svg"&gt;
+		&lt;defs&gt;${stringify(pattern)}&lt;/defs&gt;
+		&lt;rect width="200" height="200" style="fill: ${pattern.url()}"/&gt;
+	&lt;/svg&gt;
+`)</code></pre>
+	</div>
+	<script src="bundle.js"></script>
+</body></html>
