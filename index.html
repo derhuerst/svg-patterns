@@ -55,6 +55,7 @@
 		}
 
 		textarea {
+			padding: .5em;
 			width: 100%;
 			box-sizing: border-box;
 			background-color: #fff;
@@ -89,6 +90,7 @@
 		}
 		#intro-name {
 			font-size: 300%;
+			margin-bottom: 3rem;
 		}
 		#intro-name code {
 			padding: 0;
@@ -121,13 +123,18 @@
 			max-width: 20rem;
 		}
 		#demo-options {
+			flex-grow: 1;
+			margin-top: 1rem;
 			max-width: 20rem;
+			color: #fdf5e6;
+			border-color: #fdf5e6;
+			background-color: unset;
 		}
 
 		#howto {
 			max-width: none;
 			background-color: #2980b9;
-			color: #fff;
+			color: #fdf5e6;
 		}
 		#howto a {
 			color: inherit;
@@ -150,7 +157,8 @@
 </head><body>
 	<div id="intro" class="section">
 		<h1 id="intro-name"><a href="https://github.com/derhuerst/svg-patterns"><code>svg-patterns</code></a></h1>
-		<p id="intro-description"><strong>Create SVG patterns programmatically to visualize data.</strong></p>
+		<p><strong>Create SVG patterns programmatically to visualize data.</strong></p>
+		<p><a href="https://d3js.org/">D3</a> is not required. <code>5k</code> minified.</p>
 	</div>
 	<div id="demo" class="section">
 		<div class="grid">
