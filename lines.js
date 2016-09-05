@@ -1,9 +1,8 @@
 'use strict'
 
-const shortid = require('shortid').generate
 const h = require('virtual-dom/h')
 
-const {M, l, c, round, pattern} = require('./helpers')
+const {M, l, c, pattern, randomId} = require('./helpers')
 
 
 
@@ -30,23 +29,21 @@ const defaults = {
 }
 
 const lines = (opt = {}) => {
-	opt = Object.assign({}, defaults, opt)
-	if (opt.orientations && !Array.isArray(opt.orientations))
-		opt.orientations = opt.orientations ? [opt.orientations] : []
-	const children = []
+	if (!opt.orientations) throw new Error('opt.orientations missing')
+	const orientations = Array.isArray(opt.orientations) ?
+		opt.orientations : [opt.orientations]
 
-	for (let orientation of opt.orientations)
-		children.push(h('path', {
-			d: tile(orientation, opt.size),
-			stroke: opt.stroke, 'stroke-width': opt.strokeWidth + '',
-			'stroke-linecap': 'square'
-		}))
-
-	return pattern(
-		opt.id || shortid(6),
-		opt.size, opt.size,
-		children, opt.background
-	)
+	opt = Object.assign({}, defaults, opt, {
+		width: opt.size, height: opt.size,
+		bg: opt.background,
+		children: orientations.map((orientation) =>
+			h('path', {
+				d: tile(orientation, opt.size),
+				stroke: opt.stroke, 'stroke-width': opt.strokeWidth + '',
+				'stroke-linecap': 'square'
+			}))
+	})
+	return pattern(opt)
 }
 
 module.exports = lines

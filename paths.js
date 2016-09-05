@@ -1,9 +1,8 @@
 'use strict'
 
-const shortid = require('shortid').generate
 const h = require('virtual-dom/h')
 
-const {M, l, c, round, pattern} = require('./helpers')
+const {M, l, c, round, pattern, randomId} = require('./helpers')
 
 
 
@@ -114,22 +113,21 @@ const defaults = {
 }
 
 const paths = (style, opt = {}) => {
+	opt = Object.assign({}, defaults, opt)
 	if (!(style in styles)) throw new Error('unknown style')
 	style = styles[style]
-	opt = Object.assign({}, defaults, opt)
 
-	const children = [h('path', {
-		d: style.path(opt.size),
-		fill: opt.fill,
-		stroke: opt.stroke, 'stroke-width': opt.strokeWidth + '',
-		'stroke-linecap': 'square'
-	})]
-
-	return pattern(
-		opt.id || shortid(6),
-		opt.size * style.ratio, opt.size,
-		children, opt.background
-	)
+	opt = Object.assign(opt, {
+		width: opt.size * style.ratio, height: opt.size,
+		bg: opt.background,
+		children: [h('path', {
+			d: style.path(opt.size),
+			fill: opt.fill,
+			stroke: opt.stroke, 'stroke-width': opt.strokeWidth + '',
+			'stroke-linecap': 'square'
+		})]
+	})
+	return pattern(opt)
 }
 
 module.exports = paths

@@ -1,6 +1,5 @@
 'use strict'
 
-const shortid = require('shortid').generate
 const h = require('virtual-dom/h')
 
 const {pattern} = require('./helpers')
@@ -37,11 +36,11 @@ const circles = (opt = {}) => {
 				stroke: opt.stroke, 'stroke-width': opt.strokeWidth + ''
 			}))
 
-	return pattern(
-		opt.id || shortid(6),
-		opt.size, opt.size,
-		children, opt.background
-	)
+	return pattern({
+		width: opt.size, height: opt.size,
+		children,
+		bg: opt.background
+	})
 }
 
 module.exports = circles

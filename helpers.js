@@ -1,6 +1,7 @@
 'use strict'
 
-const h = require('virtual-dom/h')
+const shortid = require('shortid').generate
+const dom = require('virtual-dom/h')
 
 
 
@@ -14,18 +15,37 @@ const c = command('c')
 
 
 
-const pattern = (id, width, height, children, background) => {
-	if (background) children = [
-		h('rect', {width, height, fill: background})
-	].concat(children)
+const pattern = (_) => {
+	const {width, height, bg} = _
+	let {children} = _
+	const id = _.id || shortid(6)
 
-	const pattern = h('pattern', {
-		id, patternUnits: 'userSpaceOnUse',
-		width, height
+	if (bg) children = [
+		dom('rect', {
+			width: width + '', height: height + '',
+			fill: bg
+		})
+	].concat(children || [])
+
+	const pattern = dom('pattern', {
+		id, width, height,
+		patternUnits: 'userSpaceOnUse'
 	}, children)
-	pattern.url = () => `url(#${id})`
 
+	pattern.url = () => `url(#${id})`
 	return pattern
 }
 
-module.exports = {round, M, l, c, pattern}
+const pathPattern = (_) => {
+	const {d, stroke, strokeWidth, children} = _
+	const path = dom('path', {
+		d, stroke, 'stroke-width': strokeWidth + '',
+		'stroke-linecap': 'square'
+	})
+	_ = Object.assign({}, _, {
+		children: [path].concat(children || [])
+	})
+	return pattern(_)
+}
+
+module.exports = {round, M, l, c, pattern, pathPattern}
