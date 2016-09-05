@@ -16,7 +16,7 @@ const defaults = {
 
 const render = () => {
 	const t = type.value.split(',')
-	const o = Object.assign(defaults, JSON.parse(opt.value))
+	const o = Object.assign({}, defaults, JSON.parse(opt.value))
 
 	const pattern = t.length === 1 ? patterns[t[0]](o) : patterns[t[0]](t[1], o)
 	defs.innerHTML = stringify(pattern)
