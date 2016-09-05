@@ -43,7 +43,7 @@
 		}
 		pre code {
 			padding: 0;
-			background-color: none;
+			background-color: unset;
 			border: none;
 			border-radius: 0;
 		}
@@ -79,7 +79,7 @@
 		.section {
 			margin: 0 auto;
 			padding: 2rem 1rem;
-			max-width: 40rem;
+			max-width: 42rem;
 			text-align: center;
 		}
 
@@ -123,6 +123,29 @@
 		#demo-options {
 			max-width: 20rem;
 		}
+
+		#howto {
+			max-width: none;
+			background-color: #2980b9;
+			color: #fff;
+		}
+		#howto a {
+			color: inherit;
+			text-decoration: underline;
+		}
+		#howto pre {
+			margin-left: auto;
+			margin-right: auto;
+			max-width: 42rem;
+			color: inherit;
+			background-color: unset;
+			border: none;
+		}
+
+		#footer .love {
+			font-size: 150%;
+			color: #e74c3c;
+		}
 	</style>
 </head><body>
 	<div id="intro" class="section">
@@ -160,8 +183,10 @@
 		</div>
 	</div>
 	<div id="howto" class="section">
-		<p><code>npm install svg-patterns</code></p>
-		<pre><code>const patterns = require('svg-patterns')
+		<p>See <a href="https://github.com/derhuerst/svg-patterns#usage">the docs</a> for more details.</p>
+		<pre><code>// npm install svg-patterns
+
+const patterns = require('svg-patterns')
 const stringify = require('virtual-dom-stringify')
 
 const pattern = patterns.lines({
@@ -176,5 +201,8 @@ process.stdout.write(`
 	&lt;/svg&gt;
 `)</code></pre>
 	</div>
+	<footer id="footer" class="section">
+		<p><a href="https://github.com/derhuerst/vbb-web"><abbr title="Free Open Source Software">FOSS</abbr></a> made with <span class="love">❤</span> by <a href="http://jannisr.de">@derhuerst</a>.</p>
+	</footer>
 	<script src="bundle.min.js"></script>
 </body></html>
