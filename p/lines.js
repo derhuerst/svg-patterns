@@ -1,8 +1,8 @@
 'use strict'
 
-const h = require('virtual-dom/h')
+const dom = require('virtual-dom/h')
 
-const {M, l, c, pattern, randomId} = require('./helpers')
+const {M, l, pattern} = require('../helpers')
 
 
 
@@ -21,23 +21,25 @@ const tile = (o, s) => {
 
 
 const defaults = {
-	size: 10, // size of the pattern
-	strokeWidth: 2,
+	size: 8, // size of the pattern
+	strokeWidth: .7,
 	stroke: '#343434', // any SVG-compatible color
 	background: null, // any SVG-compatible color
 	orientations: [45]
 }
 
 const lines = (opt = {}) => {
-	if (!opt.orientations) throw new Error('opt.orientations missing')
-	const orientations = Array.isArray(opt.orientations) ?
-		opt.orientations : [opt.orientations]
+	opt = Object.assign({}, defaults, opt)
+	const orientations = opt.operations
+		? Array.isArray(opt.orientations)
+			? opt.orientations : [opt.orientations]
+		: [0,45]
 
-	opt = Object.assign({}, defaults, opt, {
+	Object.assign(opt, {
 		width: opt.size, height: opt.size,
 		bg: opt.background,
 		children: orientations.map((orientation) =>
-			h('path', {
+			dom('path', {
 				d: tile(orientation, opt.size),
 				stroke: opt.stroke, 'stroke-width': opt.strokeWidth + '',
 				'stroke-linecap': 'square'
