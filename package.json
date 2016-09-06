@@ -3,7 +3,7 @@
 	"description":  "SVG patterns for Data Visualization.",
 	"version":      "0.1.0",
 	"main":         "index.js",
-	"files":        ["index.js", "pattern.js", "lines.js"],
+	"files":        ["index.js", "helpers.js", "p/*.js"],
 	"keywords":     ["svg", "dataviz", "pattern", "generate"],
 	"author":       "Jannis R <mail@jannisr.de>",
 	"homepage":     "https://github.com/derhuerst/svg-patterns",

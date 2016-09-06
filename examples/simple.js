@@ -1,7 +1,7 @@
-const patterns = require('../index')
+const lines = require('../p/lines')
 const stringify = require('virtual-dom-stringify')
 
-const pattern = patterns.lines({
+const pattern = lines({
 	stroke: 'darkorange',
 	background: '#343434'
 })
