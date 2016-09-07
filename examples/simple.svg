@@ -1,0 +1,5 @@
+
+	<svg xmlns="http://www.w3.org/2000/svg">
+		<defs><pattern id="B1Hw4r6s" width="8" height="8" patternUnits="userSpaceOnUse"><rect width="8" height="8" fill="#343434"></rect><path d="M0,8l8,-8M-2,2l4,-4M6,10l4,-4" stroke="darkorange" stroke-width="0.7" stroke-linecap="square"></path></pattern></defs>
+		<rect width="200" height="200" style="fill: url(#B1Hw4r6s)"/>
+	</svg>

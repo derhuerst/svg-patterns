@@ -12,8 +12,8 @@
 
 This library is inspired by [Textures.js](http://riccardoscalco.github.io/textures/) but tries to do a few things differently:
 
-- `svg-patterns` does not limit you in what frontend stack you use. It just returns [virtual-dom nodes](https://github.com/Matt-Esch/virtual-dom#dom-model).
-- `svg-patterns` does not require [D3](https://d3js.org/) (`70k`). Including dependencies, it is `5k` minified.
+- `svg-patterns` does not limit you in which frontend stack you use. It just returns [virtual-dom nodes](https://github.com/Matt-Esch/virtual-dom#dom-model).
+- Because [Textures.js](http://riccardoscalco.github.io/textures/) includes [D3](https://d3js.org/), it weighs `156k`. `svg-patterns` weighs `23k`.
 
 
 ## Installing
@@ -25,17 +25,20 @@ npm install svg-patterns
 
 ## Usage
 
-`svg-patterns` exposes `lines([opt])`, `circles([opt])` and `paths(style, [opt])`.
+**`svg-patterns` exposes several styles, which you can customize by passing an object. The following list shows all styles, including their default options.** You can [fiddle with them on the website](http://jannisr.de/svg-patterns/).
 
 ### Getting Started
 
+You can either load the style via `require('svg-patterns/p/style')` or via `require('svg-patterns').style`. With the latter, the bundle will be smaller.
+
 ```js
-const patterns = require('svg-patterns')
+const lines = require('svg-patterns/p/lines')
 const stringify = require('virtual-dom-stringify')
 
-const pattern = patterns.lines({
+const pattern = lines({
 	stroke: 'darkorange',
-	background: '#343434'
+	background: '#343434',
+	orientations: [45]
 })
 
 process.stdout.write(`
@@ -48,47 +51,135 @@ process.stdout.write(`
 
 ![a simple pattern](https://cdn.rawgit.com/derhuerst/svg-patterns/master/examples/simple.svg)
 
-### `lines([opt])`
-
-Default `opt`:
+### `caps` style
 
 ```js
 const defaults = {
-	size: 10, // size of the pattern
-	strokeWidth: 2,
+	size: 9, // size of the pattern
+	fill: 'none', // any SVG-compatible color
+	strokeWidth: .9,
 	stroke: '#343434', // any SVG-compatible color
-	background: null, // any SVG-compatible color
-	orientations: [45]
+	background: null // any SVG-compatible color
 }
 ```
 
-### `circles([opt])`
-
-Default `opt`:
+### `circles` style
 
 ```js
 const defaults = {
-	size: 10, // size of the pattern
-	radius: 2,
+	size: 15, // size of the pattern
+	radius: 3,
+	complement: true,
 	fill: '#545454', // any SVG-compatible color
 	strokeWidth: 0,
-	stroke: '#343434', // any SVG-compatible color
-	background: null, // any SVG-compatible color
-	complement: false
+	stroke: 'none', // any SVG-compatible color
+	background: null // any SVG-compatible color
 }
 ```
 
-### `paths(style, [opt])`
-
-`style` must one of `squares`, `nylon`, `waves`, `woven`, `crosses`, `caps`, `hexagons`.
-
-Default `opt`:
+### `crosses` style
 
 ```js
 const defaults = {
 	size: 10, // size of the pattern
-	fill: '#545454', // any SVG-compatible color
-	strokeWidth: 0,
+	fill: 'none', // any SVG-compatible color
+	strokeWidth: .8,
+	stroke: '#343434', // any SVG-compatible color
+	background: null // any SVG-compatible color
+}
+```
+
+### `hexagons` style
+
+```js
+const defaults = {
+	size: 10, // size of the pattern
+	fill: 'none', // any SVG-compatible color
+	strokeWidth: 1,
+	stroke: '#343434', // any SVG-compatible color
+	background: null // any SVG-compatible color
+}
+```
+
+### `lines` style
+
+```js
+const defaults = {
+	size: 8, // size of the pattern
+	strokeWidth: .7,
+	stroke: '#343434', // any SVG-compatible color
+	background: null, // any SVG-compatible color
+	orientations: [45] // can be any combination of 0, 45, -45, 90
+}
+```
+
+### `nylon` style
+
+```js
+const defaults = {
+	size: 15, // size of the pattern
+	fill: 'none', // any SVG-compatible color
+	strokeWidth: 1,
+	stroke: '#343434', // any SVG-compatible color
+	background: null // any SVG-compatible color
+}
+```
+
+### `rhombic` style
+
+```js
+const defaults = {
+	size: 12, // size of the pattern
+	fill: 'none', // any SVG-compatible color
+	strokeWidth: .9,
+	stroke: '#343434', // any SVG-compatible color
+	background: null // any SVG-compatible color
+}
+```
+
+### `rhombic3d` style
+
+```js
+const defaults = {
+	size: 14, // size of the pattern
+	fill: 'none', // any SVG-compatible color
+	strokeWidth: .6,
+	stroke: '#343434', // any SVG-compatible color
+	background: null // any SVG-compatible color
+}
+```
+
+### `squares` style
+
+```js
+const defaults = {
+	size: 10, // size of the pattern
+	fill: 'none', // any SVG-compatible color
+	strokeWidth: .9,
+	stroke: '#343434', // any SVG-compatible color
+	background: null // any SVG-compatible color
+}
+```
+
+### `waves` style
+
+```js
+const defaults = {
+	size: 8, // size of the pattern
+	fill: 'none', // any SVG-compatible color
+	strokeWidth: .8,
+	stroke: '#343434', // any SVG-compatible color
+	background: null // any SVG-compatible color
+}
+```
+
+### `woven` style
+
+```js
+const defaults = {
+	size: 9, // size of the pattern
+	fill: 'none', // any SVG-compatible color
+	strokeWidth: 1,
 	stroke: '#343434', // any SVG-compatible color
 	background: null // any SVG-compatible color
 }
