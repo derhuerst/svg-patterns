@@ -13,6 +13,10 @@ const tile = (o, s) => {
 		return M(0, s) + l(s, -s)
 		+ M(-s/4, s/4) + l(s/2, -s/2)
 		+ M(s*3/4, s*5/4) + l(s/2, -s/2);
+	if (o % 180 === -45)
+		return M(s, s) + l(-s, -s)
+		+ M(s*5/4, s/4) + l(-s/2, -s/2)
+		+ M(s/4, s*5/4) + l(-s/2, -s/2);
 	if (o % 180 === 90)
 		return M(0, s/2) + l(s, 0)
 	return ''
@@ -30,7 +34,7 @@ const defaults = {
 
 const lines = (opt = {}) => {
 	opt = Object.assign({}, defaults, opt)
-	const orientations = opt.operations
+	const orientations = opt.orientations
 		? Array.isArray(opt.orientations)
 			? opt.orientations : [opt.orientations]
 		: [0,45]
