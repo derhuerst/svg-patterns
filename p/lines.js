@@ -29,7 +29,7 @@ const defaults = {
 	strokeWidth: .7,
 	stroke: '#343434', // any SVG-compatible color
 	background: null, // any SVG-compatible color
-	orientations: [45]
+	orientations: [45] // can be any combination of 0, 45, -45, 90
 }
 
 const lines = (opt = {}) => {
