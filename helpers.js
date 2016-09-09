@@ -1,9 +1,15 @@
 'use strict'
 
-const shortid = require('shortid').generate
 const dom = require('virtual-dom/h')
 
 
+
+const shortid = (l) =>
+	Math.round(Math.random() * 26 + 10).toString(36)
+	+ new Array(l - 1)
+		.fill(null)
+		.map(() => Math.round(Math.random() * 36).toString(36))
+		.join('')
 
 const round = (x) => Math.round(x * 1000) / 1000
 
