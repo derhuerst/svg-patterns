@@ -19,10 +19,12 @@
 		"browserify": "^13.1",
 		"babelify": "^7.3",
 		"babel-preset-es2015": "^6.14",
-		"uglifyify": "^3.0.2"
+		"uglify-js": "mishoo/UglifyJS2#harmony"
 	},
 	"scripts": {
-		"build": "browserify -t [ babelify --presets es2015 ] -g uglifyify demo.js > bundle.min.js",
+		"bundle": "browserify -t [ babelify --presets es2015 ] demo.js > bundle.js",
+		"minify": "uglifyjs -mc --screw-ie8 -- bundle.js > bundle.min.js",
+		"build": "npm run bundle && npm run minify",
 		"dev": "browserify demo.js > bundle.min.js"
 	}
 }
