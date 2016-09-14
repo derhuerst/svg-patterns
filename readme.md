@@ -29,7 +29,7 @@ npm install svg-patterns
 
 ### Getting Started
 
-You can either load the style via `require('svg-patterns/p/style')` or via `require('svg-patterns').style`. With the latter, the bundle will be smaller.
+If you load a style via `require('svg-patterns/p/style')`, the bundle will be smaller. But you can also load it via `require('svg-patterns').style`.
 
 ```js
 const lines = require('svg-patterns/p/lines')
