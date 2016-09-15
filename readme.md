@@ -33,7 +33,7 @@ If you load a style via `require('svg-patterns/p/style')`, the bundle will be sm
 
 ```js
 const lines = require('svg-patterns/p/lines')
-const stringify = require('virtual-dom-stringify')
+const toHTML = require('vdom-to-html')
 
 const pattern = lines({
 	stroke: 'darkorange',
@@ -43,7 +43,7 @@ const pattern = lines({
 
 process.stdout.write(`
 	<svg xmlns="http://www.w3.org/2000/svg">
-		<defs>${stringify(pattern)}</defs>
+		<defs>${toHTML(pattern)}</defs>
 		<rect width="200" height="200" style="fill: ${pattern.url()}"/>
 	</svg>
 `)
