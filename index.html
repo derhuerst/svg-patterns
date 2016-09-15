@@ -214,7 +214,7 @@
 		<pre><code>// npm install svg-patterns
 
 const patterns = require('svg-patterns')
-const toHTML = require('vdom-to-html')
+const stringify = require('virtual-dom-stringify')
 
 const pattern = patterns.lines({
 	stroke: 'darkorange',
@@ -223,7 +223,7 @@ const pattern = patterns.lines({
 
 process.stdout.write(`
 	&lt;svg xmlns="http://www.w3.org/2000/svg"&gt;
-		&lt;defs&gt;${toHTML(pattern)}&lt;/defs&gt;
+		&lt;defs&gt;${stringify(pattern)}&lt;/defs&gt;
 		&lt;rect width="200" height="200" style="fill: ${pattern.url()}"/&gt;
 	&lt;/svg&gt;
 `)</code></pre>

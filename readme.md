@@ -33,7 +33,7 @@ You can either load the style via `require('svg-patterns/p/style')` or via `requ
 
 ```js
 const lines = require('svg-patterns/p/lines')
-const toHTML = require('vdom-to-html')
+const stringify = require('virtual-dom-stringify')
 
 const pattern = lines({
 	stroke: 'darkorange',
@@ -43,7 +43,7 @@ const pattern = lines({
 
 process.stdout.write(`
 	<svg xmlns="http://www.w3.org/2000/svg">
-		<defs>${toHTML(pattern)}</defs>
+		<defs>${stringify(pattern)}</defs>
 		<rect width="200" height="200" style="fill: ${pattern.url()}"/>
 	</svg>
 `)

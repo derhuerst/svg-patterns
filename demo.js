@@ -1,6 +1,6 @@
 'use strict'
 
-const toHTML = require('vdom-to-html')
+const stringify = require('virtual-dom-stringify')
 const patterns = require('./index.js')
 
 
@@ -19,7 +19,7 @@ const render = () => {
 	const o = Object.assign({}, defaults, JSON.parse(opt.value))
 
 	const pattern = t.length === 1 ? patterns[t[0]](o) : patterns[t[0]](t[1], o)
-	defs.innerHTML = toHTML(pattern)
+	defs.innerHTML = stringify(pattern)
 }
 
 type.addEventListener('change', render)
