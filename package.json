@@ -13,7 +13,7 @@
 	"engines":      {"node": ">=6"},
 	"dependencies": {
 		"virtual-dom": "^2.1.1",
-		"virtual-dom-stringify": "^3.0.1"
+		"vdom-to-html": "^2.3"
 	},
 	"devDependencies": {
 		"browserify": "^13.1",
