@@ -1,6 +1,6 @@
 # [svg-patterns](http://jannisr.de/svg-patterns/)
 
-**Create SVG patterns programmatically to visualize data.**
+**Create SVG patterns programmatically to visualize data,** to [help color-bind people](http://betweentwobrackets.com/data-graphics-and-colour-vision/) and because it looks nice.
 
 ![a simple pattern](https://cdn.rawgit.com/derhuerst/svg-patterns/master/examples/kitchen-sink.svg)
 
@@ -29,11 +29,11 @@ npm install svg-patterns
 
 ### Getting Started
 
-You can either load the style via `require('svg-patterns/p/style')` or via `require('svg-patterns').style`. With the latter, the bundle will be smaller.
+If you load a style via `require('svg-patterns/p/style')`, the bundle will be smaller. But you can also load it via `require('svg-patterns').style`.
 
 ```js
 const lines = require('svg-patterns/p/lines')
-const stringify = require('virtual-dom-stringify')
+const toHTML = require('vdom-to-html')
 
 const pattern = lines({
 	stroke: 'darkorange',
@@ -43,7 +43,7 @@ const pattern = lines({
 
 process.stdout.write(`
 	<svg xmlns="http://www.w3.org/2000/svg">
-		<defs>${stringify(pattern)}</defs>
+		<defs>${toHTML(pattern)}</defs>
 		<rect width="200" height="200" style="fill: ${pattern.url()}"/>
 	</svg>
 `)
