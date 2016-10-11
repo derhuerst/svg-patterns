@@ -1,0 +1,12 @@
+sudo: false
+language: node_js
+node_js:
+  - 'stable'
+  - '7'
+  - '6'
+  - '5'
+  - '4'
+branches:
+  only:
+    - master
+    - gh-pages
