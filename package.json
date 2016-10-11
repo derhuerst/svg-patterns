@@ -12,6 +12,6 @@
 	"license":      "ISC",
 	"engines":      {"node": ">=6"},
 	"dependencies": {
-		"virtual-dom": "^2.1.1"
+		"virtual-dom-stringify": "^3.0.1"
 	}
 }
