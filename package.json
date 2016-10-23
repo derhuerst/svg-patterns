@@ -1,7 +1,7 @@
 {
 	"name":         "svg-patterns",
 	"description":  "SVG patterns for Data Visualization.",
-	"version":      "0.1.1",
+	"version":      "0.1.2",
 	"main":         "index.js",
 	"files":        ["index.js", "helpers.js", "p/*.js"],
 	"keywords":     ["svg", "dataviz", "pattern", "generate"],
@@ -12,6 +12,7 @@
 	"license":      "ISC",
 	"engines":      {"node": ">=6"},
 	"dependencies": {
+		"virtual-dom": "^2.1.1",
 		"virtual-dom-stringify": "^3.0.1"
 	}
 }
