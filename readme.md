@@ -9,11 +9,12 @@
 [![dependency status](https://img.shields.io/david/derhuerst/svg-patterns.svg)](https://david-dm.org/derhuerst/svg-patterns)
 [![dev dependency status](https://img.shields.io/david/dev/derhuerst/svg-patterns.svg)](https://david-dm.org/derhuerst/svg-patterns#info=devDependencies)
 ![ISC-licensed](https://img.shields.io/github/license/derhuerst/svg-patterns.svg)
+[![chat on gitter](https://badges.gitter.im/derhuerst.svg)](https://gitter.im/derhuerst)
 
 This library is inspired by [Textures.js](http://riccardoscalco.github.io/textures/) but tries to do a few things differently:
 
 - `svg-patterns` does not limit you in which frontend stack you use. It just returns [virtual-dom nodes](https://github.com/Matt-Esch/virtual-dom#dom-model).
-- Because [Textures.js](http://riccardoscalco.github.io/textures/) includes [D3](https://d3js.org/), it weighs `156k`. `svg-patterns` weighs `19k`.
+- Because [Textures.js](http://riccardoscalco.github.io/textures/) includes [D3](https://d3js.org/), it weighs `216k + 8k`. `svg-patterns` weighs `19k`.
 
 
 ## Installing
@@ -184,6 +185,13 @@ const defaults = {
 	background: null // any SVG-compatible color
 }
 ```
+
+
+## See also
+
+- [`svg-world-map`](https://github.com/derhuerst/svg-world-map) – Render a world map with a pin at a specific location.
+- [`svg-radar-chart`](https://github.com/derhuerst/svg-radar-chart) – A reusable radar chart in SVG.
+
 
 ## Contributing
 
