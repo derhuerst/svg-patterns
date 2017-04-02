@@ -2,7 +2,7 @@
 
 const dom = require('virtual-dom/h')
 
-const {M, l, round, pattern} = require('../helpers')
+const {M, l, pattern} = require('../helpers')
 
 
 
@@ -17,7 +17,7 @@ const tile = (s) => {
 		+ M(x+e+x, s/2) + l(e, 0)
 }
 
-const ratio = round(Math.tan(Math.PI/6) + 1/Math.cos(Math.PI/6))
+const ratio = +(Math.tan(Math.PI/6) + 1/Math.cos(Math.PI/6)).toFixed(3)
 
 
 
