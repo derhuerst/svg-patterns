@@ -1,6 +1,6 @@
 # [svg-patterns](http://jannisr.de/svg-patterns/)
 
-**Create SVG patterns programmatically to visualize data,** to [help color-bind people](http://betweentwobrackets.com/data-graphics-and-colour-vision/) and because it looks nice.
+**Create SVG patterns programmatically to visualize data,** to [help color-blind people](http://betweentwobrackets.com/data-graphics-and-colour-vision/) and because it looks nice.
 
 ![a simple pattern](https://cdn.rawgit.com/derhuerst/svg-patterns/master/examples/kitchen-sink.svg)
 
