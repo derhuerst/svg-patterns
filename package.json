@@ -33,6 +33,7 @@
 	},
 	"scripts": {
 		"build": "babel src --presets env --out-dir .",
-		"prepublishOnly": "npm run build"
+		"test": "node examples/kitchen-sink.js >/dev/null",
+		"prepublishOnly": "npm run build && npm test"
 	}
 }
