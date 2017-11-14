@@ -4,3 +4,7 @@ Thumbs.db
 .nvm-version
 node_modules
 npm-debug.log
+
+index.js
+helpers.js
+p

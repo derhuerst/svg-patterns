@@ -1,18 +1,38 @@
 {
-	"name":         "svg-patterns",
-	"description":  "SVG patterns for Data Visualization.",
-	"version":      "0.1.2",
-	"main":         "index.js",
-	"files":        ["index.js", "helpers.js", "p/*.js"],
-	"keywords":     ["svg", "dataviz", "pattern", "generate"],
-	"author":       "Jannis R <mail@jannisr.de>",
-	"homepage":     "http://derhuerst.github.io/svg-patterns/",
-	"repository":   "derhuerst/svg-patterns",
-	"issues":       "https://github.com/derhuerst/svg-patterns/issues",
-	"license":      "ISC",
-	"engines":      {"node": ">=6"},
+	"name": "svg-patterns",
+	"description": "SVG patterns for Data Visualization.",
+	"version": "0.1.2",
+	"main": "index.js",
+	"files": [
+		"index.js",
+		"helpers.js",
+		"p",
+		"src"
+	],
+	"keywords": [
+		"svg",
+		"dataviz",
+		"pattern",
+		"generate"
+	],
+	"author": "Jannis R <mail@jannisr.de>",
+	"homepage": "http://derhuerst.github.io/svg-patterns/",
+	"repository": "derhuerst/svg-patterns",
+	"issues": "https://github.com/derhuerst/svg-patterns/issues",
+	"license": "ISC",
+	"engines": {
+		"node": ">=6"
+	},
 	"dependencies": {
 		"virtual-dom": "^2.1.1",
 		"virtual-dom-stringify": "^3.0.1"
+	},
+	"devDependencies": {
+		"babel-cli": "^6.26.0",
+		"babel-preset-env": "^1.6.1"
+	},
+	"scripts": {
+		"build": "babel src --presets env --out-dir .",
+		"prepublishOnly": "npm run build"
 	}
 }
