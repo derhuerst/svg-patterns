@@ -11,7 +11,7 @@ const shortid = (l) =>
 		.map(() => Math.round(Math.random() * 36).toString(36))
 		.join('')
 
-const command = (name) => (...vs) => name + vs.map(round).join(',')
+const command = (name) => (...vs) => name + vs.map(Math.round).join(',')
 
 const M = command('M')
 const l = command('l')
