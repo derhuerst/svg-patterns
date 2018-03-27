@@ -1,4 +1,4 @@
-# [svg-patterns](http://jannisr.de/svg-patterns/)
+# [svg-patterns](https://derhuerst.github.io/svg-patterns/)
 
 **Create SVG patterns programmatically to visualize data,** to [help color-blind people](http://betweentwobrackets.com/data-graphics-and-colour-vision/) and because it looks nice.
 
@@ -6,10 +6,9 @@
 
 [![npm version](https://img.shields.io/npm/v/svg-patterns.svg)](https://www.npmjs.com/package/svg-patterns)
 [![build status](https://img.shields.io/travis/derhuerst/svg-patterns.svg)](https://travis-ci.org/derhuerst/svg-patterns)
-[![dependency status](https://img.shields.io/david/derhuerst/svg-patterns.svg)](https://david-dm.org/derhuerst/svg-patterns)
-[![dev dependency status](https://img.shields.io/david/dev/derhuerst/svg-patterns.svg)](https://david-dm.org/derhuerst/svg-patterns#info=devDependencies)
 ![ISC-licensed](https://img.shields.io/github/license/derhuerst/svg-patterns.svg)
 [![chat on gitter](https://badges.gitter.im/derhuerst.svg)](https://gitter.im/derhuerst)
+[![support me on Patreon](https://img.shields.io/badge/support%20me-on%20patreon-fa7664.svg)](https://patreon.com/derhuerst)
 
 This library is inspired by [Textures.js](http://riccardoscalco.github.io/textures/) but tries to do a few things differently:
 
@@ -26,7 +25,7 @@ npm install svg-patterns
 
 ## Usage
 
-**`svg-patterns` exposes several styles, which you can customize by passing an object. The following list shows all styles, including their default options.** You can [fiddle with them on the website](http://jannisr.de/svg-patterns/).
+**`svg-patterns` exposes several styles, which you can customize by passing an object. The following list shows all styles, including their default options.** You can [fiddle with them on the website](https://derhuerst.github.io/svg-patterns/).
 
 ### Getting Started
 
