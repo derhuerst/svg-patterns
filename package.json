@@ -1,7 +1,7 @@
 {
 	"name": "svg-patterns",
 	"description": "SVG patterns for Data Visualization.",
-	"version": "0.1.3",
+	"version": "1.0.0",
 	"main": "index.js",
 	"files": [
 		"index.js",
