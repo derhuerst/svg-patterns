@@ -2,7 +2,7 @@
 
 **Create SVG patterns programmatically to visualize data,** to [help color-blind people](https://web.archive.org/web/20171016120330/http://betweentwobrackets.com/data-graphics-and-colour-vision/) and because it looks nice.
 
-![a simple pattern](https://cdn.rawgit.com/derhuerst/svg-patterns/master/examples/kitchen-sink.svg)
+![a simple pattern](examples/kitchen-sink.svg)
 
 [![npm version](https://img.shields.io/npm/v/svg-patterns.svg)](https://www.npmjs.com/package/svg-patterns)
 [![build status](https://img.shields.io/travis/derhuerst/svg-patterns.svg)](https://travis-ci.org/derhuerst/svg-patterns)
