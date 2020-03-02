@@ -2,13 +2,14 @@
 
 **Create SVG patterns programmatically to visualize data,** to [help color-blind people](https://web.archive.org/web/20171016120330/http://betweentwobrackets.com/data-graphics-and-colour-vision/) and because it looks nice.
 
-![a simple pattern](examples/kitchen-sink.svg)
-
 [![npm version](https://img.shields.io/npm/v/svg-patterns.svg)](https://www.npmjs.com/package/svg-patterns)
-[![build status](https://img.shields.io/travis/derhuerst/svg-patterns.svg)](https://travis-ci.org/derhuerst/svg-patterns)
+[![build status](https://api.travis-ci.org/derhuerst/svg-patterns.svg?branch=master)](https://travis-ci.org/derhuerst/svg-patterns)
 ![ISC-licensed](https://img.shields.io/github/license/derhuerst/svg-patterns.svg)
-[![chat on gitter](https://badges.gitter.im/derhuerst.svg)](https://gitter.im/derhuerst)
+![minimum Node.js version](https://img.shields.io/node/v/svg-patterns.svg)
+[![chat with me on Gitter](https://img.shields.io/badge/chat%20with%20me-on%20gitter-512e92.svg)](https://gitter.im/derhuerst)
 [![support me on Patreon](https://img.shields.io/badge/support%20me-on%20patreon-fa7664.svg)](https://patreon.com/derhuerst)
+
+![a simple pattern](examples/kitchen-sink.svg)
 
 This library is inspired by [Textures.js](http://riccardoscalco.github.io/textures/) but tries to do a few things differently:
 
@@ -194,4 +195,4 @@ const defaults = {
 
 ## Contributing
 
-If you **have a question**, **found a bug** or want to **propose a feature**, have a look at [the issues page](https://github.com/derhuerst/svg-patterns/issues).
+If you have a question or need support using `svg-patterns`, please double-check your code and setup first. If you think you have found a bug or want to propose a feature, use [the issues page](https://github.com/derhuerst/svg-patterns/issues).
