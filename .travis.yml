@@ -4,8 +4,6 @@ node_js:
   - 'stable'
   - 'lts/*'
   - '10'
-  - '8'
-  - '6'
 script:
   - 'npm run build'
   - 'npm test'
