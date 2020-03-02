@@ -5,10 +5,10 @@ const dom = require('virtual-dom/h')
 
 
 const shortid = (l) =>
-	Math.round(Math.random() * 26 + 10).toString(36)
+	Math.floor(Math.random() * 26 + 10).toString(36)
 	+ new Array(l - 1)
 		.fill(null)
-		.map(() => Math.round(Math.random() * 36).toString(36))
+		.map(() => Math.floor(Math.random() * 36).toString(36))
 		.join('')
 
 const command = (name) => (...vs) => name + vs.map(Math.round).join(',')
