@@ -1,7 +1,7 @@
 'use strict'
 
 const patterns = require('../index')
-const toHTML = require('vdom-to-html')
+const stringify = require('virtual-dom-stringify')
 const h = require('virtual-dom/h')
 
 
@@ -69,7 +69,7 @@ const rect = (x, y, pattern) => h('rect', {
 	style: {fill: pattern.url()}
 })
 
-process.stdout.write(toHTML(
+process.stdout.write(stringify(
 	h('svg', {
 		width: 1000, height: 600, viewBox: '0 0 500 300',
 		xmlns: 'http://www.w3.org/2000/svg'

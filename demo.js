@@ -1,7 +1,7 @@
 'use strict'
 
 const stringify = require('virtual-dom-stringify')
-const patterns = require('./index.js')
+const patterns = require('./src')
 
 
 

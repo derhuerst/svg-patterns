@@ -5,19 +5,19 @@ const dom = require('virtual-dom/h')
 
 
 const shortid = (l) =>
-	Math.round(Math.random() * 26 + 10).toString(36)
+	Math.floor(Math.random() * 26 + 10).toString(36)
 	+ new Array(l - 1)
 		.fill(null)
-		.map(() => Math.round(Math.random() * 36).toString(36))
+		.map(() => Math.floor(Math.random() * 36).toString(36))
 		.join('')
 
-const round = (x) => Math.round(x * 1000) / 1000
-
-const command = (name) => (...vs) => name + vs.map(round).join(',')
+const command = (name) => (...vs) => name + vs.map(Math.round).join(',')
 
 const M = command('M')
 const l = command('l')
 const c = command('c')
+const v = command('v')
+const a = command('a')
 
 
 
@@ -54,4 +54,4 @@ const pathPattern = (_) => {
 	return pattern(_)
 }
 
-module.exports = {round, M, l, c, pattern, pathPattern}
+module.exports = {M, l, c, v, pattern, pathPattern}

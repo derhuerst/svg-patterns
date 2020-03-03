@@ -1,19 +1,20 @@
-# [svg-patterns](http://jannisr.de/svg-patterns/)
+# [svg-patterns](https://derhuerst.github.io/svg-patterns/)
 
-**Create SVG patterns programmatically to visualize data,** to [help color-bind people](http://betweentwobrackets.com/data-graphics-and-colour-vision/) and because it looks nice.
-
-![a simple pattern](https://cdn.rawgit.com/derhuerst/svg-patterns/master/examples/kitchen-sink.svg)
+**Create SVG patterns programmatically to visualize data,** to [help color-blind people](https://web.archive.org/web/20171016120330/http://betweentwobrackets.com/data-graphics-and-colour-vision/) and because it looks nice.
 
 [![npm version](https://img.shields.io/npm/v/svg-patterns.svg)](https://www.npmjs.com/package/svg-patterns)
-[![build status](https://img.shields.io/travis/derhuerst/svg-patterns.svg)](https://travis-ci.org/derhuerst/svg-patterns)
-[![dependency status](https://img.shields.io/david/derhuerst/svg-patterns.svg)](https://david-dm.org/derhuerst/svg-patterns)
-[![dev dependency status](https://img.shields.io/david/dev/derhuerst/svg-patterns.svg)](https://david-dm.org/derhuerst/svg-patterns#info=devDependencies)
+[![build status](https://api.travis-ci.org/derhuerst/svg-patterns.svg?branch=master)](https://travis-ci.org/derhuerst/svg-patterns)
 ![ISC-licensed](https://img.shields.io/github/license/derhuerst/svg-patterns.svg)
+![minimum Node.js version](https://img.shields.io/node/v/svg-patterns.svg)
+[![chat with me on Gitter](https://img.shields.io/badge/chat%20with%20me-on%20gitter-512e92.svg)](https://gitter.im/derhuerst)
+[![support me on Patreon](https://img.shields.io/badge/support%20me-on%20patreon-fa7664.svg)](https://patreon.com/derhuerst)
+
+![a simple pattern](examples/kitchen-sink.svg)
 
 This library is inspired by [Textures.js](http://riccardoscalco.github.io/textures/) but tries to do a few things differently:
 
 - `svg-patterns` does not limit you in which frontend stack you use. It just returns [virtual-dom nodes](https://github.com/Matt-Esch/virtual-dom#dom-model).
-- Because [Textures.js](http://riccardoscalco.github.io/textures/) includes [D3](https://d3js.org/), it weighs `156k`. `svg-patterns` weighs `19k`.
+- Because [Textures.js](http://riccardoscalco.github.io/textures/) includes [D3](https://d3js.org/), it weighs `216k + 8k`. `svg-patterns` weighs `19k`.
 
 
 ## Installing
@@ -25,7 +26,7 @@ npm install svg-patterns
 
 ## Usage
 
-**`svg-patterns` exposes several styles, which you can customize by passing an object. The following list shows all styles, including their default options.** You can [fiddle with them on the website](http://jannisr.de/svg-patterns/).
+**`svg-patterns` exposes several styles, which you can customize by passing an object. The following list shows all styles, including their default options.** You can [fiddle with them on the website](https://derhuerst.github.io/svg-patterns/).
 
 ### Getting Started
 
@@ -33,7 +34,7 @@ If you load a style via `require('svg-patterns/p/style')`, the bundle will be sm
 
 ```js
 const lines = require('svg-patterns/p/lines')
-const toHTML = require('vdom-to-html')
+const stringify = require('virtual-dom-stringify')
 
 const pattern = lines({
 	stroke: 'darkorange',
@@ -43,7 +44,7 @@ const pattern = lines({
 
 process.stdout.write(`
 	<svg xmlns="http://www.w3.org/2000/svg">
-		<defs>${toHTML(pattern)}</defs>
+		<defs>${stringify(pattern)}</defs>
 		<rect width="200" height="200" style="fill: ${pattern.url()}"/>
 	</svg>
 `)
@@ -185,6 +186,13 @@ const defaults = {
 }
 ```
 
+
+## See also
+
+- [`svg-world-map`](https://github.com/derhuerst/svg-world-map) – Render a world map with a pin at a specific location.
+- [`svg-radar-chart`](https://github.com/derhuerst/svg-radar-chart) – A reusable radar chart in SVG.
+
+
 ## Contributing
 
-If you **have a question**, **found a bug** or want to **propose a feature**, have a look at [the issues page](https://github.com/derhuerst/svg-patterns/issues).
+If you have a question or need support using `svg-patterns`, please double-check your code and setup first. If you think you have found a bug or want to propose a feature, use [the issues page](https://github.com/derhuerst/svg-patterns/issues).
