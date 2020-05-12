@@ -1,40 +1,44 @@
 {
-	"name": "svg-patterns",
-	"description": "SVG patterns for Data Visualization.",
-	"version": "2.0.0",
-	"main": "index.js",
-	"files": [
-		"index.js",
-		"helpers.js",
-		"p",
-		"src"
-	],
-	"keywords": [
-		"svg",
-		"dataviz",
-		"pattern",
-		"generate"
-	],
-	"author": "Jannis R <mail@jannisr.de>",
-	"homepage": "http://derhuerst.github.io/svg-patterns/",
-	"repository": "derhuerst/svg-patterns",
-	"issues": "https://github.com/derhuerst/svg-patterns/issues",
-	"license": "ISC",
-	"engines": {
-		"node": ">=10"
-	},
-	"dependencies": {
-		"virtual-dom": "^2.1.1",
-		"virtual-dom-stringify": "^3.0.1"
-	},
-	"devDependencies": {
-		"@babel/cli": "^7.8.4",
-		"@babel/core": "^7.8.6",
-		"@babel/preset-env": "^7.8.6"
-	},
-	"scripts": {
-		"build": "babel src --presets @babel/env --out-dir .",
-		"test": "node examples/kitchen-sink.js >/dev/null",
-		"prepublishOnly": "npm run build && npm test"
-	}
+  "name": "svg-patterns",
+  "description": "SVG patterns for Data Visualization.",
+  "version": "2.0.0",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "helpers.js",
+    "p",
+    "src"
+  ],
+  "keywords": [
+    "svg",
+    "dataviz",
+    "pattern",
+    "generate"
+  ],
+  "author": "Jannis R <mail@jannisr.de>",
+  "homepage": "http://derhuerst.github.io/svg-patterns/",
+  "repository": "derhuerst/svg-patterns",
+  "issues": "https://github.com/derhuerst/svg-patterns/issues",
+  "license": "ISC",
+  "engines": {
+    "node": ">=10"
+  },
+  "dependencies": {
+    "virtual-dom": "^2.1.1",
+    "virtual-dom-stringify": "^3.0.1",
+    "snyk": "^1.320.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.6",
+    "@babel/preset-env": "^7.8.6"
+  },
+  "scripts": {
+    "build": "babel src --presets @babel/env --out-dir .",
+    "test": "node examples/kitchen-sink.js >/dev/null",
+    "prepublishOnly": "npm run build && npm test",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "snyk": true
 }
